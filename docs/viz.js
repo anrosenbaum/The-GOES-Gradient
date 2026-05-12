@@ -364,7 +364,7 @@ document.getElementById("play-btn").addEventListener("click", function() {
 loadAll()
   .then(() => {
     render();
-    preloadRemaining();
+    preloadRemaining();   // cache remaining months in background
   })
   .catch(err => {
     console.error(err);

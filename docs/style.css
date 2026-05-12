@@ -17,7 +17,7 @@ header .subtitle {
   max-width: 700px;
 }
 
-/* ── Controls ──────────────────────────────────────────────── */
+/* ── Controls ──────────────────────── */
 #controls {
   display: flex;
   gap: 24px;

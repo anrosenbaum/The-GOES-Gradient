@@ -1,60 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>The Ocean's Fuel</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>The Ocean's Fuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="bootstrap.css"> -->
 </head>
 <body>
-<header>
-  <h1>The Ocean's Fuel: How Sea Surface Temperature Shapes Atlantic Hurricanes</h1>
-  <p class="subtitle">
-    Where does the ocean provide the most fuel for storm intensity?
+  <header>
+    <h1>The Ocean's Fuel: How Sea Surface Temperature Shapes Atlantic Hurricanes</h1>
+    <p class="subtitle">
+      Where does the ocean provide the most fuel for storm intensity?
+    </p>
+    <p style="color:#888;font-size:13px;margin:-12px 0 24px;max-width:700px">
+    Focused on the Atlantic hurricane basin (10-45°N, 100-15°W) during the 2020 season.
   </p>
-  <p style="color:#888;font-size:13px;margin:-12px 0 24px;max-width:700px">
-    Focused on the Atlantic hurricane basin (10–45°N, 100–15°W) during the 2020 season.
-  </p>
-</header>
-
-<main>
-  <div id="controls">
-    <div class="control-group">
-      <label for="month-slider">Month</label>
-      <div style="display:flex;align-items:center;gap:10px">
+  </header>
+  <main>
+    <div id="controls">
+      <div class="control-group">
+        <label for="month-slider">Month</label>
         <input type="range" id="month-slider" min="0" max="5" step="1" value="2">
+        <!-- <input type="month" id="month-slider"> -->
         <span id="month-label">August 2020</span>
       </div>
-    </div>
-
-    <div class="control-group">
-      <label for="threshold-slider">Highlight water above (&deg;C)</label>
-      <div style="display:flex;align-items:center;gap:10px">
+      <div class="control-group">
+        <label for="threshold-slider">Highlight water above (&deg;C)</label>
         <input type="range" id="threshold-slider" min="24" max="30" step="0.5" value="26.5">
         <span id="threshold-label">26.5&deg;C</span>
       </div>
+      <div class="control-group">
+        <label><input type="checkbox" id="show-tracks" checked> Show storm tracks</label>
+        <!-- <button id="show-tracks">Toggle Tracks</button> -->
+      </div>
+      <div class="control-group">
+        <button id="play-btn">&#9654; Play Season</button>
+      </div>
     </div>
-
-    <div class="control-group" style="justify-content:flex-end;flex-direction:row;align-items:center;gap:16px">
-      <label style="display:flex;align-items:center;gap:6px">
-        <input type="checkbox" id="show-tracks" checked> Show storm tracks
-      </label>
-      <button id="play-btn">▶ Play Season</button>
+    <div id="chart-container">
+      <svg id="map"></svg>
+      <!-- <canvas id="map"></canvas> -->
+      <div id="tooltip" class="tooltip" style="opacity:0"></div>
     </div>
-  </div>
-
-  <div id="chart-container">
-    <svg id="map"></svg>
-    <div id="tooltip" class="tooltip" style="opacity:0"></div>
-  </div>
-
-  <div id="legend"></div>
-</main>
-
-<section id="writeup"></section>
-
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="https://unpkg.com/topojson-client@3"></script>
-<script src="viz.js"></script>
+    <div id="legend"></div>
+  </main>
+  <section id="writeup">
+  </section>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+  <script src="viz.js"></script>
+  <!-- <script src="bundle.js"></script> -->
 </body>
 </html>
